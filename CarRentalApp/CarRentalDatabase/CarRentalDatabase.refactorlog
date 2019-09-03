@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="9a63c240-d879-414d-b8ef-29ffa5f2b281" ChangeDateTime="09/02/2019 22:30:08">
+    <Property Name="ElementName" Value="[dbo].[Vehicle].[Miles]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vehicle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Mileage" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8934bff0-e8d3-487b-a100-dbcb707a7253" ChangeDateTime="09/02/2019 22:39:44">
+    <Property Name="ElementName" Value="[dbo].[FK_User_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_User_ToUserType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="744b7026-cb26-4976-a825-24e89dd01e0c" ChangeDateTime="09/02/2019 22:44:18">
+    <Property Name="ElementName" Value="[dbo].[Maintenance].[Maintenance]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MaintenanceID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8515c166-d8d6-428a-a5b2-b6707d409d19" ChangeDateTime="09/02/2019 23:01:29">
+    <Property Name="ElementName" Value="[dbo].[Maintenance].[MaintenanceID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MaintenanceId" />
+  </Operation>
+</Operations>
