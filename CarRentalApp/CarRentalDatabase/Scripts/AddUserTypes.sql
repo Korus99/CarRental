@@ -2,4 +2,4 @@
 INSERT INTO [UserType] (Id, Name) VALUES (50, 'maintainer');
 INSERT INTO [UserType] (Id, Name) VALUES (100, 'user');
 INSERT INTO [UserType] (Id, Name) VALUES (9999, 'admin');
-INSERT INTO [User] (Id, Name, UserType) VALUES (0, 'Nobody', 0);
+INSERT INTO [User] ( Name, UserType) VALUES ( 'Nobody', 0);

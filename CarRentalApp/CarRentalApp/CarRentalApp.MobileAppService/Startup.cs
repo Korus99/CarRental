@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CarRentalApp.MobileAppService.Repository;
+using CarRentalApp.MobileAppService.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
-using CarRentalApp.Models;
 
 namespace CarRentalApp.MobileAppService
 {
@@ -24,7 +25,7 @@ namespace CarRentalApp.MobileAppService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IItemRepository, ItemRepository>();
+            services.AddSingleton<IVehicleRepository, VehicleRepository>();
 
             services.AddSwaggerGen(c =>
             {

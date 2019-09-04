@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Availability]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL IDENTITY PRIMARY KEY, 
     [VehicleID] INT NOT NULL, 
     [UserID] INT NULL, 
     [StartDate] DATETIME NULL, 

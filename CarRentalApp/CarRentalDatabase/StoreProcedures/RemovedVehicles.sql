@@ -3,7 +3,7 @@ AS
    DELETE a
    FROM Availability a
    INNER JOIN Vehicle v
-     ON a.VehicleID=v.Id
+     ON a.VehicleId=v.Id
    WHERE v.Removed = 1
 
    DELETE m

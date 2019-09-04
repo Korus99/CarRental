@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[User]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL IDENTITY PRIMARY KEY, 
     [Name] VARCHAR(30) NULL, 
     [Brand] VARBINARY(50) NULL, 
     [Make] VARBINARY(50) NULL, 

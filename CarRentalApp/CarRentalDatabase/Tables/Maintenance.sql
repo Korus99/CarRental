@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Maintenance]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL IDENTITY PRIMARY KEY, 
     [VehicleId] INT NOT NULL, 
     [MaintenanceId] INT NOT NULL, 
     [MaintStart] DATETIME NULL, 
