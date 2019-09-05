@@ -3,12 +3,12 @@ using CarRentalApp.MobileAppService.Models;
 
 namespace CarRentalApp.MobileAppService.Repository.Interface
 {
-    public interface IUserRepository
+    public interface IUserBusiness
     {
         void Add(User item);
         void Update(User item);
-        Vehicle Remove(int key);
-        Vehicle Get(int id);
+        User Remove(int key);
+        User Get(int id);
         IEnumerable<User> GetAll();
     }
 }

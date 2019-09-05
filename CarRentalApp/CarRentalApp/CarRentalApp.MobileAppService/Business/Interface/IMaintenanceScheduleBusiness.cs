@@ -3,12 +3,12 @@ using CarRentalApp.MobileAppService.Models;
 
 namespace CarRentalApp.MobileAppService.Repository.Interface
 {
-    public interface IMaintenanceScheduleRepository
+    public interface IMaintenanceScheduleBusiness
     {
         void Add(MaintenanceSchedule item);
         void Update(MaintenanceSchedule item);
-        Vehicle Remove(int key);
-        Vehicle Get(int id);
+        MaintenanceSchedule Remove(int key);
+        MaintenanceSchedule Get(int id);
         IEnumerable<MaintenanceSchedule> GetAll();
     }
 }

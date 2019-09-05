@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CarRentalApp.MobileAppService
+﻿namespace CarRentalApp.MobileAppService.Common
 {
     public static class Enums
     {

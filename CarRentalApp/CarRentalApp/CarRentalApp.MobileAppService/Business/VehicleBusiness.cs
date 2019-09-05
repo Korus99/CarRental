@@ -1,15 +1,15 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using CarRentalApp.MobileAppService.Common;
 using CarRentalApp.MobileAppService.DataModels;
 using CarRentalApp.MobileAppService.Repository.Interface;
 using Vehicle = CarRentalApp.MobileAppService.Models.Vehicle;
 
-namespace CarRentalApp.MobileAppService.Repository
+namespace CarRentalApp.MobileAppService.Business
 {
-    public class VehicleRepository : IVehicleRepository
+    public class VehicleBusiness : IVehicleBusiness
     {
-        public VehicleRepository()
+        public VehicleBusiness()
         {
 
         }

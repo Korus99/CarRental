@@ -13,10 +13,10 @@ namespace CarRentalApp.MobileAppService.DataModels
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public byte[] Brand { get; set; }
-        public byte[] Make { get; set; }
-        public byte[] License { get; set; }
-        public byte[] State { get; set; }
+        public string Brand { get; set; }
+        public string Make { get; set; }
+        public string License { get; set; }
+        public string State { get; set; }
         public int UserType { get; set; }
 
         public virtual UserType UserTypeNavigation { get; set; }

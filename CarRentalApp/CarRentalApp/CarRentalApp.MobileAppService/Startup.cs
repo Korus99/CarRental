@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CarRentalApp.MobileAppService.Business;
 using CarRentalApp.MobileAppService.Repository;
 using CarRentalApp.MobileAppService.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
@@ -25,7 +26,8 @@ namespace CarRentalApp.MobileAppService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IVehicleRepository, VehicleRepository>();
+            services.AddSingleton<IVehicleBusiness, VehicleBusiness>();
+            services.AddSingleton<IUserBusiness, UserBusiness>();
 
             services.AddSwaggerGen(c =>
             {

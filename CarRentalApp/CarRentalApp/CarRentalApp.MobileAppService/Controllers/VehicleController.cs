@@ -8,54 +8,54 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarRentalApp.MobileAppService.Controllers
 {
-    [Route("api/item")]
+    [Route("api/vehicle")]
     [ApiController]
-    public class ItemController : ControllerBase
+    public class VehicleController : ControllerBase
     {
-        private readonly IVehicleRepository ItemRepository;
+        private readonly IVehicleBusiness _vehicleBusiness;
 
-        public ItemController(IVehicleRepository itemRepository)
+        public VehicleController(IVehicleBusiness vehicleBusiness)
         {
-            ItemRepository = itemRepository;
+            _vehicleBusiness = vehicleBusiness;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<Vehicle>> List()
         {
-            return ItemRepository.GetAll().ToList();
+            return _vehicleBusiness.GetAll().ToList();
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Vehicle> GetItem(string id)
+        public ActionResult<Vehicle> GetVehicle(int id)
         {
-            Vehicle item = ItemRepository.Get(id);
+            var vehicle = _vehicleBusiness.Get(id);
 
-            if (item == null)
+            if (vehicle == null)
                 return NotFound();
 
-            return item;
+            return vehicle;
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Vehicle> Create([FromBody]Vehicle item)
+        public ActionResult<Vehicle> Create([FromBody]Vehicle vehicle)
         {
-            ItemRepository.Add(item);
-            return CreatedAtAction(nameof(GetItem), new { item.Id }, item);
+            _vehicleBusiness.Add(vehicle);
+            return CreatedAtAction(nameof(GetVehicle), new { vehicle.Id }, vehicle);
         }
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Edit([FromBody] Vehicle item)
+        public ActionResult Edit([FromBody] Vehicle vehicle)
         {
             try
             {
-                ItemRepository.Update(item);
+                _vehicleBusiness.Update(vehicle);
             }
             catch (Exception)
             {
@@ -67,11 +67,11 @@ namespace CarRentalApp.MobileAppService.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            Vehicle item = ItemRepository.Remove(id);
+            var vehicle = _vehicleBusiness.Remove(id);
 
-            if (item == null)
+            if (vehicle == null)
                 return NotFound();
 
             return Ok();

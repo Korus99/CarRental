@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CarRentalApp.MobileAppService.DataModels;
+﻿using CarRentalApp.MobileAppService.DataModels;
 
-namespace CarRentalApp.MobileAppService
+namespace CarRentalApp.MobileAppService.Common
 {
     public static class Convert
     {
@@ -37,6 +33,34 @@ namespace CarRentalApp.MobileAppService
                 Removed = vehicle.Removed,
                 State = vehicle.State,
                 VIN = vehicle.Vin
+            };
+        }
+
+        public static UserData ToDataModel(Models.User user)
+        {
+            return new UserData()
+            {
+                Id = user.Id,
+                Brand = user.Brand,
+                License = user.License,
+                Make = user.Make,
+                Name = user.Name,
+                State = user.State,
+                UserType = (int)user.UserType
+            };
+        }
+
+        public static Models.User FromDataModel(UserData user)
+        {
+            return new Models.User()
+            {
+                Id = user.Id,
+                Brand = user.Brand,
+                License = user.License,
+                Make = user.Make,
+                Name = user.Name,
+                State = user.State,
+                UserType = (Enums.UserTypes)user.UserType
             };
         }
     }

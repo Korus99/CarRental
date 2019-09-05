@@ -3,7 +3,7 @@ using CarRentalApp.MobileAppService.Models;
 
 namespace CarRentalApp.MobileAppService.Repository.Interface
 {
-    public interface IMaintenance
+    public interface IMaintenanceBusiness
     {
         void Add(Vehicle item);
         void Update(Vehicle item);

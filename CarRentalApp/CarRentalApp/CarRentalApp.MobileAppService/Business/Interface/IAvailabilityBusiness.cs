@@ -3,12 +3,12 @@ using CarRentalApp.MobileAppService.Models;
 
 namespace CarRentalApp.MobileAppService.Repository.Interface
 {
-    public interface IAvailabilityRepository
+    public interface IAvailabilityBusiness
     {
         void Add(Availability item);
         void Update(Availability item);
-        Vehicle Remove(int key);
-        Vehicle Get(int id);
+        Availability Remove(int key);
+        Availability Get(int id);
         IEnumerable<Availability> GetAll();
     }
 }
