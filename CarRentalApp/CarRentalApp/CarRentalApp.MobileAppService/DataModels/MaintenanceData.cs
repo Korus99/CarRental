@@ -14,7 +14,7 @@ namespace CarRentalApp.MobileAppService.DataModels
         public int VehicleId { get; set; }
         public int MaintenanceId { get; set; }
         public DateTime? MaintStart { get; set; }
-        public string MainEnd { get; set; }
+        public DateTime? MaintEnd { get; set; }
         public bool Completed { get; set; }
         public int? CompletedBy { get; set; }
 

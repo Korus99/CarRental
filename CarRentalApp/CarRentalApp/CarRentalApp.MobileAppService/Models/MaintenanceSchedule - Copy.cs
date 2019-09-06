@@ -11,12 +11,12 @@ namespace CarRentalApp.MobileAppService.Models
 
         [Required] public int MaintenanceId { get; set; }
 
-        public DateTime MaintenanceStart { get; set; }
+        public DateTime? MaintenanceStart { get; set; }
 
-        public DateTime MaintenanceEnd { get; set; }
+        public DateTime? MaintenanceEnd { get; set; }
 
         public bool Completed { get; set; }
 
-        public int CompletedBy { get; set; }
+        public int? CompletedBy { get; set; }
     }
 }

@@ -1,12 +1,11 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using CarRentalApp.MobileAppService.Common;
 using CarRentalApp.MobileAppService.DataModels;
 using CarRentalApp.MobileAppService.Models;
 using CarRentalApp.MobileAppService.Repository.Interface;
 
-namespace CarRentalApp.MobileAppService.Repository
+namespace CarRentalApp.MobileAppService.Business
 {
     public class UserBusiness : IUserBusiness
     {
@@ -50,7 +49,7 @@ namespace CarRentalApp.MobileAppService.Repository
         {
             using (var context = new CarRentalContext())
             {
-                var user = context.User.Single(v => v.Id == id);
+                var user = context.User.Single(u => u.Id == id);
                 user.UserType = (int)Enums.UserTypes.Noone;
                 context.SaveChanges();
 
@@ -62,7 +61,7 @@ namespace CarRentalApp.MobileAppService.Repository
         {
             using (var context = new CarRentalContext())
             {
-                var updateUser = context.User.Single(v => v.Id == user.Id);
+                var updateUser = context.User.Single(u => u.Id == user.Id);
                 updateUser = Convert.ToDataModel(user);
                 context.SaveChanges();
             }

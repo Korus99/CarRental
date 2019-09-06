@@ -4,7 +4,7 @@
     [VehicleId] INT NOT NULL, 
     [MaintenanceId] INT NOT NULL, 
     [MaintStart] DATETIME NULL, 
-    [MainEnd] NCHAR(10) NULL, 
+    [MaintEnd] DATETIME NULL, 
     [Completed] BIT NOT NULL DEFAULT 0, 
     [CompletedBy] INT NULL, 
     CONSTRAINT [FK_Maintenance_ToVehicle] FOREIGN KEY ([VehicleId]) REFERENCES [Vehicle]([Id]), 

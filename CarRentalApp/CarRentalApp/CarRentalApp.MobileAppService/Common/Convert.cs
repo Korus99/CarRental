@@ -63,5 +63,33 @@ namespace CarRentalApp.MobileAppService.Common
                 UserType = (Enums.UserTypes)user.UserType
             };
         }
+
+        public static MaintenanceData ToDataModel(Models.Maintenance maintenance)
+        {
+            return new MaintenanceData()
+            {
+                Id = maintenance.Id,
+                Completed = maintenance.Completed,
+                CompletedBy = maintenance.CompletedBy,
+                MaintEnd = maintenance.MaintenanceEnd,
+                MaintStart = maintenance.MaintenanceStart,
+                VehicleId = maintenance.VehicleId,
+                MaintenanceId = maintenance.MaintenanceId
+            };
+        }
+
+        public static Models.Maintenance FromDataModel(MaintenanceData maintenance)
+        {
+            return new Models.Maintenance()
+            {
+                Id = maintenance.Id,
+                Completed = maintenance.Completed,
+                CompletedBy = maintenance.CompletedBy,
+                MaintenanceEnd = maintenance?.MaintEnd,
+                MaintenanceStart = maintenance?.MaintStart,
+                VehicleId = maintenance.VehicleId,
+                MaintenanceId = maintenance.MaintenanceId
+            };
+        }
     }
 }

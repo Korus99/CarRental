@@ -5,9 +5,9 @@ namespace CarRentalApp.MobileAppService.Repository.Interface
 {
     public interface IVehicleBusiness
     {
-        void Add(Vehicle item);
-        void Update(Vehicle item);
-        Vehicle Remove(int key);
+        void Add(Vehicle vehicle);
+        void Update(Vehicle vehicle);
+        Vehicle Remove(int id);
         Vehicle Get(int id);
         IEnumerable<Vehicle> GetAll();
     }

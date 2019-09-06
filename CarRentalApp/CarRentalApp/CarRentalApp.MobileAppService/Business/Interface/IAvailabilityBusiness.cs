@@ -5,9 +5,9 @@ namespace CarRentalApp.MobileAppService.Repository.Interface
 {
     public interface IAvailabilityBusiness
     {
-        void Add(Availability item);
-        void Update(Availability item);
-        Availability Remove(int key);
+        void Add(Availability availability);
+        void Update(Availability availability);
+        Availability Remove(int id);
         Availability Get(int id);
         IEnumerable<Availability> GetAll();
     }

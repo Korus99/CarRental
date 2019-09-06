@@ -5,10 +5,10 @@ namespace CarRentalApp.MobileAppService.Repository.Interface
 {
     public interface IMaintenanceBusiness
     {
-        void Add(Vehicle item);
-        void Update(Vehicle item);
-        Vehicle Remove(string key);
-        Vehicle Get(string id);
-        IEnumerable<Vehicle> GetAll();
+        void Add(Maintenance maintenance);
+        void Update(Maintenance maintenance);
+        Maintenance Remove(int id);
+        Maintenance Get(int id);
+        IEnumerable<Maintenance> GetAll();
     }
 }
