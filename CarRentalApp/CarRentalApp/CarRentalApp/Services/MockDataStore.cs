@@ -2,65 +2,66 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CarRentalApp.Models;
+using CarRentalApp.Common.Models;
 
 namespace CarRentalApp.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Vehicle>
     {
-        List<Item> items;
+        List<Vehicle> vehicles;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            vehicles = new List<Vehicle>();
+            var id = 1;
+            var mockItems = new List<Vehicle>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Vehicle {Id = id++, VIN = "5TDKK3DC9BS133106", Brand = "AutoMaker", Make = "A1"},
+                new Vehicle {Id = id++, VIN = "1GJHG35K591104946", Brand = "TruckMaker", Make = "T1"},
+                new Vehicle {Id = id++, VIN = "1FMNU43S3YEC81896", Brand = "AutoMaker", Make = "A1"},
+                new Vehicle {Id = id++, VIN = "4V4LC9KK37N405827", Brand = "TruckMaker", Make = "T1"},
+                new Vehicle {Id = id++, VIN = "2FTEF15Y2GCB10186", Brand = "AutoMaker", Make = "A3"},
+                new Vehicle {Id = id++, VIN = "WMWZC3C58FWT14974", Brand = "AutoMaker", Make = "A2"}
             };
 
-            foreach (var item in mockItems)
+            foreach (var vehicle in mockItems)
             {
-                items.Add(item);
+                vehicles.Add(vehicle);
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Vehicle vehicle)
         {
-            items.Add(item);
+            vehicles.Add(vehicle);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Vehicle vehicle)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldItem = vehicles.Where((Vehicle arg) => arg.Id == vehicle.Id).FirstOrDefault();
+            vehicles.Remove(oldItem);
+            vehicles.Add(vehicle);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(int id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldItem = vehicles.FirstOrDefault(arg => arg.Id == id);
+            vehicles.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Vehicle> GetItemAsync(int id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(vehicles.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Vehicle>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(vehicles);
         }
     }
 }

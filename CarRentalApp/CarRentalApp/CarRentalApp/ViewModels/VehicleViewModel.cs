@@ -5,27 +5,27 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using CarRentalApp.Models;
+using CarRentalApp.Common.Models;
 using CarRentalApp.Views;
 
 namespace CarRentalApp.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class VehicleViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Vehicle> Vehicles { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public VehicleViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Title = "Vehicle Inventory";
+            Vehicles = new ObservableCollection<Vehicle>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewVehiclePage, Vehicle>(this, "AddItem", async (obj, vehicle) =>
             {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                var newVehicle = vehicle;
+                Vehicles.Add(newVehicle);
+                await DataStore.AddItemAsync(newVehicle);
             });
         }
 
@@ -38,11 +38,11 @@ namespace CarRentalApp.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Vehicles.Clear();
+                var vehicles = await DataStore.GetItemsAsync(true);
+                foreach (var vehicle in vehicles)
                 {
-                    Items.Add(item);
+                    Vehicles.Add(vehicle);
                 }
             }
             catch (Exception ex)

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using CarRentalApp.MobileAppService.Models;
+using CarRentalApp.Common.Models;
 
 namespace CarRentalApp.MobileAppService.Repository.Interface
 {

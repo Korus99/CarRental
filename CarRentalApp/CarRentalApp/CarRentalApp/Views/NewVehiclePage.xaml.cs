@@ -1,36 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using CarRentalApp.Common.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using CarRentalApp.Models;
 
 namespace CarRentalApp.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class NewItemPage : ContentPage
+    public partial class NewVehiclePage : ContentPage
     {
-        public Item Item { get; set; }
+        public Vehicle Vehicle { get; set; }
 
-        public NewItemPage()
+        public NewVehiclePage()
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
+            Vehicle = new Vehicle();
 
             BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", Vehicle);
             await Navigation.PopModalAsync();
         }
 

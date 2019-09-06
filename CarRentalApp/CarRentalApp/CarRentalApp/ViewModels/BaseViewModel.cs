@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
 
-using CarRentalApp.Models;
+using CarRentalApp.Common.Models;
 using CarRentalApp.Services;
 
 namespace CarRentalApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Vehicle> DataStore => DependencyService.Get<IDataStore<Vehicle>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

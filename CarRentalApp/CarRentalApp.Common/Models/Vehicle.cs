@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarRentalApp.MobileAppService.Models
+namespace CarRentalApp.Common.Models
 {
     public class Vehicle
     {

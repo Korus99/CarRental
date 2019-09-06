@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CarRentalApp.Common;
+using CarRentalApp.Common.Models;
 using CarRentalApp.MobileAppService.Common;
 using CarRentalApp.MobileAppService.DataModels;
-using CarRentalApp.MobileAppService.Models;
 using CarRentalApp.MobileAppService.Repository.Interface;
 
 namespace CarRentalApp.MobileAppService.Business

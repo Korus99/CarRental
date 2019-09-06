@@ -1,4 +1,4 @@
-﻿namespace CarRentalApp.MobileAppService.Common
+﻿namespace CarRentalApp.Common
 {
     public static class Enums
     {

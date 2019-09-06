@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CarRentalApp.MobileAppService.Models;
+using CarRentalApp.Common.Models;
 using CarRentalApp.MobileAppService.Repository.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

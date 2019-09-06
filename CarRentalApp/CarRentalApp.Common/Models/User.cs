@@ -1,6 +1,4 @@
-﻿using CarRentalApp.MobileAppService.Common;
-
-namespace CarRentalApp.MobileAppService.Models
+﻿namespace CarRentalApp.Common.Models
 {
     public class User
     {

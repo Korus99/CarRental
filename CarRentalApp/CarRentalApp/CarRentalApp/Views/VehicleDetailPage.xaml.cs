@@ -3,7 +3,7 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using CarRentalApp.Models;
+using CarRentalApp.Common.Models;
 using CarRentalApp.ViewModels;
 
 namespace CarRentalApp.Views
@@ -11,28 +11,28 @@ namespace CarRentalApp.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class ItemDetailPage : ContentPage
+    public partial class VehicleDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        VehicleDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public VehicleDetailPage(VehicleDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
         }
 
-        public ItemDetailPage()
+        public VehicleDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item
+            var vehicle = new Vehicle
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                VIN = "2",
+                Brand = "T1"
             };
 
-            viewModel = new ItemDetailViewModel(item);
+            viewModel = new VehicleDetailViewModel(vehicle);
             BindingContext = viewModel;
         }
     }

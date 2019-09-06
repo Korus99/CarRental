@@ -15,7 +15,7 @@ AS
    DELETE ms
    FROM MaintenanceSchedule ms
    INNER JOIN Vehicle v
-     ON ms.VehicleID=v.Id
+     ON ms.VehicleId=v.Id
    WHERE v.Removed = 1
 
    DELETE v

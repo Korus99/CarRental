@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CarRentalApp.Common.Models;
 using CarRentalApp.MobileAppService.Common;
 using CarRentalApp.MobileAppService.DataModels;
 using CarRentalApp.MobileAppService.Repository.Interface;
-using Vehicle = CarRentalApp.MobileAppService.Models.Vehicle;
 
 namespace CarRentalApp.MobileAppService.Business
 {

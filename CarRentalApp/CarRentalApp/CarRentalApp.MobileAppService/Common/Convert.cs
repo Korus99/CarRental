@@ -1,10 +1,11 @@
-﻿using CarRentalApp.MobileAppService.DataModels;
-
+﻿using CarRentalApp.Common;
+using CarRentalApp.Common.Models;
+using CarRentalApp.MobileAppService.DataModels;
 namespace CarRentalApp.MobileAppService.Common
 {
     public static class Convert
     {
-        public static VehicleData ToDataModel(Models.Vehicle vehicle)
+        public static VehicleData ToDataModel(Vehicle vehicle)
         {
             return new VehicleData()
             {
@@ -20,9 +21,9 @@ namespace CarRentalApp.MobileAppService.Common
             };
         }
 
-        public static Models.Vehicle FromDataModel(VehicleData vehicle)
+        public static Vehicle FromDataModel(VehicleData vehicle)
         {
-            return new Models.Vehicle()
+            return new Vehicle()
             {
                 Id = vehicle.Id,
                 Brand = vehicle.Brand,
@@ -36,7 +37,7 @@ namespace CarRentalApp.MobileAppService.Common
             };
         }
 
-        public static UserData ToDataModel(Models.User user)
+        public static UserData ToDataModel(User user)
         {
             return new UserData()
             {
@@ -50,9 +51,9 @@ namespace CarRentalApp.MobileAppService.Common
             };
         }
 
-        public static Models.User FromDataModel(UserData user)
+        public static User FromDataModel(UserData user)
         {
-            return new Models.User()
+            return new User()
             {
                 Id = user.Id,
                 Brand = user.Brand,
@@ -64,7 +65,7 @@ namespace CarRentalApp.MobileAppService.Common
             };
         }
 
-        public static MaintenanceData ToDataModel(Models.Maintenance maintenance)
+        public static MaintenanceData ToDataModel(Maintenance maintenance)
         {
             return new MaintenanceData()
             {
@@ -78,9 +79,9 @@ namespace CarRentalApp.MobileAppService.Common
             };
         }
 
-        public static Models.Maintenance FromDataModel(MaintenanceData maintenance)
+        public static Maintenance FromDataModel(MaintenanceData maintenance)
         {
-            return new Models.Maintenance()
+            return new Maintenance()
             {
                 Id = maintenance.Id,
                 Completed = maintenance.Completed,

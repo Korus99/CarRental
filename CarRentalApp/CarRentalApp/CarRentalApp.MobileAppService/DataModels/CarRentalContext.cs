@@ -66,7 +66,7 @@ namespace CarRentalApp.MobileAppService.DataModels
 
             modelBuilder.Entity<MaintenanceData>(entity =>
             {
-                entity.Property(e => e.MainEnd).HasMaxLength(10);
+                entity.Property(e => e.MaintEnd).HasMaxLength(10);
 
                 entity.Property(e => e.MaintStart).HasColumnType("datetime");
 
